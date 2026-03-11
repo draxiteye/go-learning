@@ -1,0 +1,46 @@
+package main 
+
+import "fmt" 
+import "time"
+
+func main() {
+
+    // Switch is a cleaner alternative to if else
+
+    // Basic switch
+    switch x := 5; x { // check value of x
+    case 1:
+        fmt.Println("one")
+    case 2:
+        fmt.Println("two")
+    case 3:
+        fmt.Println("three")
+    default:
+        fmt.Println("other") // if no case matches
+    }
+
+    fmt.Println("-----")
+
+    // Multiple values in one case
+    switch time.Now().Weekday() { // check today's weekday
+    case time.Saturday, time.Sunday:
+        fmt.Println("It's weekend")
+    default:
+        fmt.Println("It's a Working Day")
+    }
+
+    fmt.Println("-----")
+
+    // Type switch
+    var box interface{} // variable that can hold any type
+    box = "Go"
+
+    switch box.(type) { // check the type of box
+    case int:
+        fmt.Println("There is a number value inside the box")
+    case string:
+        fmt.Println("There is a Word inside the box")
+    case bool:
+        fmt.Println("There is a Boolean value inside the box")
+    }
+}
