@@ -1,0 +1,44 @@
+package main
+
+import "fmt"
+
+//creating a function that can add two numbers 
+func add(a int, b int) int {
+	return a + b
+}
+//The basic structure here is
+/* funckeyword nameofthefunction (parameterName type ) returnType{
+   //code in the function
+   return value 
+}*/
+
+func main(){
+	fmt.Println(add(10,15))
+
+	// Variadic functions are the functions that accept as many arguments as you give 
+	fmt.Println(11, 2, 3, 4, 64, "Hi")
+
+	// Note: You cannot call add(a,b) with more than 2 arguments
+	// Instead, use the variadic function defined below
+
+	addVariadic(1, 3)
+	addVariadic(6, 8, 26, 27, 5, 1, 5, 63, 51)
+
+	//The variadic parameters are like slices so all the slice operators work with them too
+	showAll(5, 10, 15, 20)
+}
+
+// Variadic function definition
+func addVariadic(nums ...int) {
+	sum := 0
+	for _, value := range nums {
+		sum += value
+	}
+	fmt.Println(sum)
+}
+
+//Example
+func showAll(nums ...int) {
+    fmt.Println("Length:", len(nums)) // len works
+    fmt.Println("First element:", nums[0]) // indexing works
+}
