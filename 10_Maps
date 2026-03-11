@@ -1,0 +1,67 @@
+package main 
+
+import "fmt"
+import "maps"
+
+func main(){
+	//maps are like hashtables or like dictionary in Python
+	//you find things in map by their names(keys) and not indices 
+	m := make(map[string]string)
+	// make(map[type of the key]type of values in the map)
+
+	m["name"]= "draxiteye"
+	m["city"]= "Bangalore"
+	m["language"] = "go"
+	fmt.Println(m)
+
+	// accessing an element in the map
+	fmt.Println(m["name"], m["language"])
+
+	//if you try to access a non-existing key it will return a zero value of the same type 
+
+	//len works as usual whereas cap does not exist
+	fmt.Println(len(m))
+
+	//deleting an element in a map (use the delete function)
+	delete(m, "language")
+	fmt.Println(m)
+	fmt.Println(len(m))
+
+	//if you want to delete all the elements you can use the clear function
+	//clear(m)
+	//fmt.Println(m)
+
+	n := map[string]int{
+		"Maths": 64, "English": 94,
+	}
+
+	fmt.Println(n)
+
+	//to check whether a key exists or not in go use 'ok'
+
+	value, ok := n["Maths"]
+	if ok {
+		fmt.Println("The value exists", value)
+	} else {
+		fmt.Println("The value does not exist")
+		//This will print the message alongside the value
+	}
+
+	//if you want to print only the message 
+	/*
+	_, ok := n["Maths"]
+
+	if ok {
+		fmt.Println("Maths key exists")
+	} else {
+		fmt.Println("Maths key does not exist")
+	}
+	*/
+
+	k := make(map[string]string)
+	k["Soham"] = "student"
+	k["Farhan"] = "CR7"
+
+	//Comparing if two maps have the same elements in them 
+	fmt.Println(maps.Equal(m, k))
+}
