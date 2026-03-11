@@ -1,0 +1,66 @@
+package main
+
+import "fmt"
+
+func main() {
+
+    // What are arrays in Go
+    // Arrays are a sequence of values with fixed length and same type
+
+    // Basic syntax for arrays in Go
+    var arr [4]int
+    // This creates an array named arr of type int with 4 elements
+    // All elements are initially 0 (default value for int)
+
+    // Length of the array
+    fmt.Println("Length of arr:", len(arr))
+
+    // Print the array
+    fmt.Println("Array contents:", arr)
+
+    // Assign values to array elements
+    arr[0] = 10
+    arr[1] = 20
+    fmt.Println("After assigning some values:", arr)
+
+    // Array of strings
+    var name [5]string
+    name[0] = "golang"
+    // Output: [golang "" "" "" ""]
+    fmt.Println("String array:", name)
+
+    // Declaring and initializing in a single line
+    nums := [3]int{1, 2, 3}
+    fmt.Println("Initialized array:", nums)
+
+    // Iterating an array using range
+    fmt.Println("Iterating nums array:")
+    for i, v := range nums {
+        fmt.Println("Index:", i, "Value:", v)
+    }
+
+    // 2D arrays in Go
+    // Declaring a blank 2x2 array
+    twoarray := [2][2]int{}
+    fmt.Println("Blank 2D array:", twoarray)
+
+    // Declaring a value-filled 3x3 array
+    threearray := [3][3]int{
+        {3, 4, 1},
+        {5, 6, 2},
+        {5, 8, 9},
+    }
+    fmt.Println("3x3 2D array:", threearray)
+
+    // Accessing an element from 2D array
+    fmt.Println("Element at row 1, col 2:", threearray[1][2]) // 2
+
+    // Iterating 2D array (simpler, beginner-friendly)
+    fmt.Println("Iterating 3x3 array:")
+    for i, row := range threearray {
+        for j, val := range row {
+            // Print row, column, and value in a simple way
+            fmt.Println("Row:", i, "Col:", j, "Value:", val)
+        }
+    }
+}
