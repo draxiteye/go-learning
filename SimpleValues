@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	// -------- Simple Values in Go --------
+
+	// Basic value types in Go:
+	// int, float64, bool, rune, byte, string
+
+	// Integer
+	fmt.Println(100)
+
+	// Float
+	fmt.Println(100.26)
+
+	// Boolean values
+	fmt.Println(true)
+	fmt.Println(false)
+
+	// String
+	fmt.Println("Hello guys")
+
+	// Rune: a single character like 'A'
+	fmt.Println('A')
+
+	// Byte: a small number (0–255)
+	fmt.Println(byte(65))
+}
