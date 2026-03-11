@@ -1,0 +1,43 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	// -------- Variables in Go --------
+
+	// A variable is like a box that stores something.
+
+	// Making a variable with a type
+	var name string = "golang"
+	fmt.Println(name)
+
+	// Variables can store numbers too
+	var rollnum int64 = 10693
+	fmt.Println(rollnum)
+
+	// Go can guess the type by looking at the value
+	var city = "Bangalore"
+	fmt.Println(city)
+
+	// Short way to make a variable (only inside functions)
+	score := 10.5
+	fmt.Println(score)
+
+	// We can change what is inside the box
+	score = 20.5
+	fmt.Println(score)
+
+	// Making many variables in one line
+	var a, b int = 10, 20
+	fmt.Println(a, b)
+
+	// Making many variables in a group
+	var (
+		identity = "draxiteye"
+		marks    = 63.63
+		active   bool = true
+	)
+
+	fmt.Println(identity, marks, active)
+}
