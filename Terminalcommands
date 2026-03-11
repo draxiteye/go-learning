@@ -1,0 +1,37 @@
+// -------- Executables in Go --------
+// Executable: a program the computer can run directly.
+// In Go, we create an executable using `go build`.
+
+package main // main package is required for executable Go programs
+
+import "fmt" // fmt is a standard library package used for formatting input and output
+
+func main() { // main is the entry point of a Go program
+	fmt.Println("Hello World") 
+}
+
+// ------------ Go Terminal Commands -----------
+
+// Running a Go program directly (does not keep the compiled binary)
+// go run filename.go
+
+// Compiles the program and creates an executable binary
+// go build filename.go
+
+// Build executable with a custom name
+// go build -o app filename.go
+
+// Automatically formats Go code according to Go standards
+// go fmt
+
+// Run program using input from a file instead of keyboard
+// go run main.go < input.txt
+
+// Runs all test functions in the current package
+// go test
+
+// Initialize a Go module (creates go.mod file)
+// go mod init module-name
+
+// Run the entire Go module in the current directory
+// go run .
