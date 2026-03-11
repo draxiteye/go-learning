@@ -1,0 +1,29 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	// -------- Constants in Go --------
+
+	// A constant is like a box whose value cannot change.
+
+	const fast = "Speed"
+	const marks float64 = 64.63
+	const maxScore = 100
+
+	fmt.Println(fast, marks, maxScore)
+
+	// We can also make many constants together
+	const (
+		pi   = 3.14
+		app  = "GoApp"
+		done = true
+	)
+
+	fmt.Println(pi, app, done)
+
+	// Constants cannot change
+	const x = 10
+	// x = 20  // This would cause an error
+}
