@@ -1,0 +1,33 @@
+package main
+
+import "fmt"
+
+func main(){
+
+    // Example 1: Simple if-else statement
+    age := 18 
+
+    if age >= 18 { 
+        // Check if age is 18 or more
+        fmt.Println("Is an adult ") // if true, print this
+    } else { 
+        // If age is less than 18
+        fmt.Println("Is a minor") // print this
+    }
+
+    fmt.Println("-----") // separator to make output easier to read
+
+    // Example 2: If-else if statement
+    if age >= 18 { 
+        // Check first condition: is age 18 or more
+        fmt.Println("Is allowed to vote ") // if true, print this
+    } else if age <= 12 { 
+        // If first condition is false, check if age is 12 or less
+        fmt.Println("Is a Teenager ") // if true, print this
+    }
+    
+    fmt.Println("-----") // separator
+
+    // Note: Go does not have ternary operators like some other languages
+    // You always use if-else to make decisions
+}
