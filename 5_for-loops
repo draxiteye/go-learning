@@ -1,0 +1,72 @@
+package main
+
+import "fmt"
+
+func main() {
+
+    // 1. While-style loop (Go doesn't have a separate "while" keyword)
+    i := 1
+    for i <= 3 { // "Do this as long as i is 3 or less"
+        fmt.Println(i) // print the current number
+        i++            // add 1 to i each time
+    }
+
+    fmt.Println("-----")
+
+    // 2. Classic for loop with continue
+    for j := 0; j <= 3; j++ { // start at 0, stop at 3, add 1 each time
+        if j == 2 {
+            continue // skip printing 2
+        }
+        fmt.Println(j) // print the number
+    }
+
+    fmt.Println("-----")
+
+    // 3. Infinite loop (stopping safely with break)
+    count := 0
+    for { // this would run forever
+        fmt.Println("Counting:", count)
+        count++
+        if count == 5 {
+            break // stop the loop when count reaches 5
+        }
+    }
+
+    fmt.Println("-----")
+
+    // 4. Simple number loop from 0 to 4
+    for k := 0; k < 5; k++ { // start at 0, stop before 5
+        fmt.Println(k)        // print the number
+    }
+
+    fmt.Println("-----")
+
+    // 5. Nested loops (loop inside a loop)
+    for a := 1; a <= 3; a++ {      // outer loop
+        for b := 1; b <= 2; b++ {  // inner loop
+            fmt.Println("a:", a, "b:", b)
+        }
+    }
+
+    fmt.Println("-----")
+
+    // 6. Looping over a string using range
+    word := "Go!" // a string is a group of letters
+
+    // "range" is a special keyword in Go
+    // It is used to go through every item in something like a string, slice, array, or map
+    // For strings, range gives the position (index) and the letter (character)
+    for index, char := range word {
+        fmt.Println("Position:", index, "Letter:", string(char))
+    }
+
+    fmt.Println("-----")
+
+    // 7. Using range but ignoring the index
+    // Sometimes we just want the value and not the position
+    for _, char := range word { // _ means "ignore this value"
+        fmt.Println("Letter only:", string(char))
+    }
+
+}
