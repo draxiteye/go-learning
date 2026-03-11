@@ -1,0 +1,61 @@
+package main 
+
+import "fmt"
+import"slices"
+func main(){
+	//Slices are dynamic arrays that expand in size as per the programme needs
+	var num1[]int 
+	fmt.Println(num1)
+
+	//you can also check if the slice is empty 
+	fmt.Println(num1 ==nil)
+	//checking the length of the array
+	fmt.Println(len(num1))
+
+	var num2 = make([]int,2,5)
+	//here 2 is the initial size that you want the slice to take 
+	//whereas 5 is the reserved space that you can already keep reserved 
+	
+
+	//why keep space reserved if go slices resize automatically 
+	// Reserve capacity to avoid repeated resizing and copying when appending elements
+
+
+	fmt.Println(len(num2))
+	//this tells us the number of elements inside the slice 
+
+	fmt.Println(cap(num2))
+	//cap tells us the max number of elements that we can fit in
+	//in the given slice until it is full
+	//as slices are dynamic and expand as soon as they become full 
+	fmt.Println(num2 == nil)
+
+	//go way to assign slices 
+	slice := make([] int ,4,5)
+    fmt.Println(slice)
+	
+	//adding an element at the end (append)
+	slice = append(slice,8)
+	fmt.Println(slice)
+
+	 // adding element at a certain position
+	 slice[0]=1
+	 fmt.Println(slice)
+
+	//slicing a slice in go
+	smallslice := slice[2:4]
+	fmt.Println(smallslice)
+
+	//comparing two slices 
+	//install the slices package alongside the fmt package first 
+	fmt.Println(slices.Equal(slice,smallslice))
+	//it checks if the length of the slices is same and 
+	//also checks if each and every index has the same value 
+	//also it checks the type too
+
+	//2D slices
+	matrix := make([][]int,3 )
+	fmt.Println(matrix)
+	//this creates a 2D slice with 3 rows
+
+}
