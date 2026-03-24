@@ -1,0 +1,22 @@
+package main
+
+import "fmt"
+
+func main() {
+    /* Pointers in Go are variables that store the address 
+       of another variable in them */
+    x := 10
+    fmt.Println(x)
+    
+    // This is a pointer for x
+    p := &x
+    fmt.Println(p)
+
+    // This is called a dereference symbol in Go
+    // It helps to access the value at a pointer address
+    fmt.Println(*p)
+
+    // Changing the value of a variable via a pointer
+    *p = 15
+    fmt.Println(*p)
+}
