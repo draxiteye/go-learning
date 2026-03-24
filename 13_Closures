@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+// A closure is a function that "remembers" variables from its surrounding scope
+func counter() func() int {
+	count := 0
+	return func() int {
+		count++
+		return count
+	}
+}
+
+func main() {
+	c := counter()        // c is now a function that has its own "count"
+	fmt.Println(c())      // 1
+	fmt.Println(c())      // 2
+	fmt.Println(c())      // 3
+}
