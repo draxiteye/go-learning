@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+// Struct is like a box that can hold multiple things together
+// It's like grouping different values (fields) together under a single name
+
+// Defining a Struct
+type Person struct {
+	name string
+	age  int
+}
+
+func main() {
+	// Creating a Struct
+	person1 := Person{name: "draxiteye", age: 19}
+
+	fmt.Println(person1)       // prints the entire struct
+	fmt.Println(person1.name)  // prints the particular field from the struct
+	fmt.Println(person1.age)
+
+	// Changing the struct values
+	person1.age = 20
+	fmt.Println(person1.age)
+
+	// You can add pointers to structs as well
+	pointer := &person1
+	pointer.age = 19
+	fmt.Println(person1.age)
+}
