@@ -1,0 +1,62 @@
+package main
+
+import "fmt"
+
+// An Enum is like a fixed set of values 
+// Example : A traffic light has only 3 colors Red , Yellow and Green 
+// i.e you can only choose from these three
+
+// also go has no real enums like that in java and cpp
+// it uses constants + iota 
+
+// what is iota?
+// Iota is a counter that starts at 0 and then it increases by 1 each time 
+
+type Day int 
+
+const (
+	Sunday Day = iota 
+	Monday 
+	Tuesday
+	Wednesday
+	Thursday 
+	Friday 
+	Saturday 
+)
+
+// Adding String method for Day
+func (d Day) String() string {
+	switch d {
+	case Sunday:
+		return "Sunday"
+	case Monday:
+		return "Monday"
+	case Tuesday:
+		return "Tuesday"
+	case Wednesday:
+		return "Wednesday"
+	case Thursday:
+		return "Thursday"
+	case Friday:
+		return "Friday"
+    case Saturday:
+		return "Saturday"
+	
+	default:
+		return "Unknown"
+	}
+}
+
+func main() { 
+	var d Day = Monday
+    fmt.Println(d)
+
+	// Loop over enum values
+	for day := Sunday; day <=Saturday; day++ {
+		fmt.Println(day)
+	}
+
+	// You cannot use loops to generate iota values because iota works at compile time
+	// while loops run at runtime 
+	// you can use loops over enum values after defining them though 
+}
