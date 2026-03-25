@@ -1,0 +1,31 @@
+package main
+
+import "fmt"
+
+// an interface in go is like a rule 
+// if it's something that is set as a common requirement it passes the criteria 
+
+// Creating a rule called Animal that must have a function called speak that returns a string 
+type Animal interface {
+	speak() string 
+}
+
+type dog struct{}
+// this creates an empty dog type 
+
+func (d dog) speak() string {
+	return "Bark"
+	// This makes the dog type have a speak function 
+	// and when the dog speaks it barks 
+}
+
+func main() {
+	var a Animal
+	// This makes a variable a which can store anything that follows the Animal rules 
+
+	a = dog{}
+	// We assign a dog instance to the interface variable 'a'
+
+	fmt.Println(a.speak())
+	// calling the speak function and printing it 
+}
