@@ -1,0 +1,21 @@
+package main
+
+import "fmt"
+
+// Generics allow us to write functions that work with multiple types
+
+// Basic syntax 
+func print[T any](x T) {
+	fmt.Println(x)
+}
+
+// Generic add function (works with int, float32 and float64)
+func addprint[T int | float32 | float64](a, b T) T {
+	return a + b
+}
+
+func main() {
+	print(9)
+	print("draxiteye")
+	fmt.Println(addprint(18.0, 50.5))
+}
