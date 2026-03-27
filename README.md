@@ -19,6 +19,12 @@ So far I have covered:
 - Range
 - Functions
 - Variadic functions
+- Closures
+- Pointers
+- Structs
+- Interface
+- Enums
+- Generics
 
 More topics will be added as I continue learning.
 
